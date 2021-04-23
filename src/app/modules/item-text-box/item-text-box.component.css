@@ -1,0 +1,49 @@
+div{
+  cursor: text;
+  display: flex;
+  padding: 1px;
+  position: relative;
+  overflow: hidden;
+  border: 1px inset #767676;
+  border-radius: 3px;
+  line-height: 1em;
+}
+
+input{
+  flex-grow: 1;
+  outline: 0;
+  border: 0;
+  margin: 1px;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+li {
+  list-style: none;
+  border-radius: 3px;
+  display: flex;
+  border: 1px solid black;
+  margin: 0 3px;
+  padding: 0 3px;
+  align-items: center;
+}
+
+li::after{
+  content: '×';
+  background-color: #303030;
+  color: white;
+  font-family: sans-serif;
+  border-radius: 50%;
+  margin-left: 3px;
+  cursor: pointer;
+  font-size: x-small;
+  box-sizing: border-box;
+  width: 1.2em;
+  height: 1.2em;
+  text-align: center;
+  line-height: 1.1;
+}

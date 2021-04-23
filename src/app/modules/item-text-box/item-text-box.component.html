@@ -1,0 +1,8 @@
+<div>
+  <ul>
+    <li *ngFor="let item of items; let i = index" (click)="removeItem(i)">
+      {{item}}
+    </li>
+  </ul>
+  <input type='text' #input (keyup.enter)="onEnter(input.value)" (keydown.backspace)="removeLast()" [(ngModel)]="text" />
+</div>
