@@ -2,8 +2,6 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {ItemTextBoxModule} from './modules/item-text-box/item-text-box.module';
-import {ItemTextBoxComponent} from './modules/item-text-box/item-text-box.component';
-import compile = WebAssembly.compile;
 
 describe('AppComponent', () => {
 

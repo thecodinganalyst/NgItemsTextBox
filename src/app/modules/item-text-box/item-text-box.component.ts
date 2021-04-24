@@ -1,6 +1,5 @@
 import {Component, forwardRef, Input, OnInit} from '@angular/core';
 import {AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator} from '@angular/forms';
-import {isNull} from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'item-text-box',
