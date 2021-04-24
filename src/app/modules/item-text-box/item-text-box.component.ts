@@ -1,5 +1,6 @@
 import {Component, forwardRef, Input, OnInit} from '@angular/core';
 import {AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator} from '@angular/forms';
+import {isNull} from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'item-text-box',
@@ -23,7 +24,7 @@ export class ItemTextBoxComponent implements OnInit, ControlValueAccessor, Valid
   disabled = false;
 
   onChange = (items: string[]) => {};
-  onTouched = () => {};
+  onTouched = () => { this.touched = true; };
 
   removeItem(item: number): void {
     if (this.disabled) { return; }
@@ -63,16 +64,9 @@ export class ItemTextBoxComponent implements OnInit, ControlValueAccessor, Valid
 
   writeValue(items: string[]): void {
     if (!this.disabled) {
-      this.markAsTouched();
+      this.onTouched();
       this.items = items ? items : [];
       this.copyAndEmit();
-    }
-  }
-
-  markAsTouched(): void {
-    if (!this.touched) {
-      this.onTouched();
-      this.touched = true;
     }
   }
 

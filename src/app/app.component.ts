@@ -7,7 +7,7 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent{
-  formGroup: FormGroup = this.fb.group({items: [['a', 'b', 'c']]});
+  formGroup: FormGroup = this.fb.group({items: ['']});
 
   constructor(private fb: FormBuilder) {
   }

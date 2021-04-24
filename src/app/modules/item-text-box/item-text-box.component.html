@@ -4,5 +4,5 @@
       {{item}}
     </li>
   </ul>
-  <input type='text' #input (keyup.enter)="onEnter(input.value)" (keydown.backspace)="removeLast()" [(ngModel)]="text" />
+  <input type='text' value="hi" #input (keyup.enter)="onEnter(input.value)" (keydown)="onTouched()" (keydown.backspace)="removeLast()" [(ngModel)]="text" />
 </div>

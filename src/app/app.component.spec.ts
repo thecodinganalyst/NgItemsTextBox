@@ -1,10 +1,15 @@
-import { TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {ItemTextBoxModule} from './modules/item-text-box/item-text-box.module';
 import {ItemTextBoxComponent} from './modules/item-text-box/item-text-box.component';
+import compile = WebAssembly.compile;
 
 describe('AppComponent', () => {
+
+  let fixture: ComponentFixture<AppComponent>;
+  let app: AppComponent;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -17,9 +22,20 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.componentInstance;
+  });
+
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
+
+  it('should update the item list', () => {
+    app.UpdateItemsTextBox();
+    const items = app.formGroup.get('items') as FormControl;
+    const itemsValue: string[] = items.value as string[];
+    expect(itemsValue.length).toEqual(3);
+  });
+
 });
