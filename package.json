@@ -1,6 +1,6 @@
 {
   "name": "items-text-box",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -43,5 +43,10 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.1.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thecodinganalyst/NgItemsTextBox"
+  },
+  "keywords": ["Angular", "Chips"]
 }
